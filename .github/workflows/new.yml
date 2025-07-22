@@ -1,0 +1,27 @@
+name: create a file 
+
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: create a file
+        run: echo "this is a new file created" 1> new_file.txt
+
+      - name: read the file
+        run: cat new_file.txt
+
+      - name: edit the file
+        run: echo "this is the new line" >> new_file.txt
+
+      - name: read the file
+        run: cat new_file.txt
+
+
+
