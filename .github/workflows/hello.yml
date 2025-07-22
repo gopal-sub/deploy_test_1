@@ -1,14 +1,22 @@
 name: Hello world CI
 
-on: 
-    push: 
-        branches: [main]
-    
-jobs: 
-    say-hello:
-        runs-on: ubuntu-latest
+on:
+    push:
+      branches:
+        - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-          - name: Say Hello
-            run: echo "Hello world"
-            
+    steps:
+      - name: Checkot code
+        uses: actions/checkout@v4
+
+      - name: SHowing working dir
+        run: pwd 
+
+      - name: Checkot code
+        run: echo "Building project"
+
+      - name: List Files 
+        run: ls -la
