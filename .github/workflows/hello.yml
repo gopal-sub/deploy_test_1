@@ -1,23 +1,14 @@
-name: Bash in CI
+name: Show Time
 
-on:
+on: 
     push: 
         branches:
           - main
 
 jobs:
-  bash-dema:
-        runs-on: ubuntu-latest
+  show-time:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: checkout code
-          uses: actions/checkout@v4
-
-        - name: show current dir and ls files
-          run: |
-            echo "current directory"
-            pwd
-
-            echo "files in the dir"
-            ls -la
-
+    steps:
+      - name: Print time now 
+        run: date
