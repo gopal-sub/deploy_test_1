@@ -1,22 +1,23 @@
-name: Hello world CI
+name: Bash in CI
 
 on:
-    push:
-      branches:
-        - main
+    push: 
+        branches:
+          - main
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  bash-dema:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkot code
-        uses: actions/checkout@v4
+        steps:
+        - name: checkout code
+          uses: actions/checkout@v4
 
-      - name: SHowing working dir
-        run: pwd 
+        - name: show current dir and ls files
+          run: |
+            echo "current directory"
+            pwd
 
-      - name: Checkot code
-        run: echo "Building project"
+            echo "files in the dir"
+            ls -la
 
-      - name: List Files 
-        run: ls -la
