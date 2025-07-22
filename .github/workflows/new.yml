@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: create a file
-        run: ech23 "this is a new file created" 1> new_file.txt
+        run: echo "this is a new file created" 1> new_file.txt
 
       - name: read the file
         run: cat new_file.txt
