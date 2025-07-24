@@ -1,0 +1,19 @@
+name: deploy-dev
+
+on: 
+  push:
+    branches:
+      - 'dev/**'
+
+jobs:
+  deploy_aws:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log to AWS
+        run: |
+          ssh ubuntu@44.211.144.128 -i ${{SSH_PRIVATE_KEY_NEW}}
+
+      - name: pull latest code
+        run: |
+          ls 
