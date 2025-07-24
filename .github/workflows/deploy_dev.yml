@@ -11,11 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Log to AWS
+      - name: Add private key
         run: |
-          ssh ubuntu@44.211.144.128 -i "${{secrets.SSH_PRIVATE_KEY_NEW}}"
+          echo "${{secrets.SSH_PRIVATE_KEY_NEW}}" 1> ~/.ssh/aws_key
+          chmod 700 ~/.ssh/aws_key
           ls
 
-      - name: pull latest code
-        run: |
-          ls 
+
