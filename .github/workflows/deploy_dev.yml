@@ -15,7 +15,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           echo "${{secrets.SSH_PRIVATE_KEY_NEW}}" 1> ~/.ssh/aws_key
-          chmod 700 /home/runner/work/.ssh
+          chmod 700 ~/.ssh/aws_key
           ls
 
 
