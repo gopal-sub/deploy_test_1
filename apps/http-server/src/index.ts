@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json())
 
 app.get('/', (req, res)=>{
-    res.send("whats uppppppppppppppppppppppppppppppppppp")
+    res.send("hi tere whats cookin")
 });
 
 
