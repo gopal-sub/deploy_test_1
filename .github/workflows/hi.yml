@@ -4,9 +4,13 @@ on:
   push
 
 jobs:
-  :
-    runs-on: 
+  test1:
+    runs-on: ubuntu-lastes 
 
     steps:
-      - name: 
-        run: 
+      - name: Checkout code
+        uses : actions/checkout@v4
+
+      - name: cd code
+        run: cd week17 && ls
+
