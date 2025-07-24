@@ -16,6 +16,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{secrets.SSH_PRIVATE_KEY_NEW}}" 1> ~/.ssh/aws_key
           chmod 700 ~/.ssh/aws_key
-          ls
+
+      - name: Login -> dev server
+        run: |
+          ssh ubuntu@44.211.144.128 -i ~/.ssh/aws_key -t [ls]
+
+        
 
 
