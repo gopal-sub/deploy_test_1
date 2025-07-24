@@ -19,7 +19,8 @@ jobs:
 
       - name: Login -> dev server
         run: |
-          ssh ubuntu@44.211.144.128 -o StrictHostKeyChecking=no -i ~/.ssh/aws_key -t 'cd deploy_d && git pull https://github.com/gopal-sub/deploy_test_1.git && sudo systemctl restart nginx'
+          ssh ubuntu@44.211.144.128 -o StrictHostKeyChecking=no -i ~/.ssh/aws_key \
+          "cd deploy_d && git pull https://github.com/gopal-sub/deploy_test_1.git && sudo systemctl restart nginx"
 
         
 
