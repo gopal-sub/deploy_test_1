@@ -13,7 +13,7 @@ on:
 jobs:
   deploy_aws:
     runs-on: ubuntu-latest
-    environment: production
+
 
     steps:
       - name: Add private key
