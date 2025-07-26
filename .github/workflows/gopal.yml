@@ -1,9 +1,13 @@
 name: push_gopal_checks
 
-on: 
- push:
-   branches:
-     - feature/v1
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Which env to deploy to"
+        required: true
+        default: "staging"
+
 
 jobs:
   build:
