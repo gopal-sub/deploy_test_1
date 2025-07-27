@@ -1,0 +1,29 @@
+name: push_gopal_checks
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Which env to deploy to"
+        required: true
+        default: "staging"
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: pull code
+        uses: actions/checkout@v4
+        
+      - name: ls repo
+        run: ls -la
+  
+  deploy:
+    runs-on: ubuntu-latest 
+    needs: build
+
+    steps:
+      - name: pull code
+        run: echo "deploying code"
