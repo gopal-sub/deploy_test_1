@@ -8,15 +8,19 @@ on:
   pull_request:
     branches:
       - main
+      - gopal
+      - feauture
       
 
 jobs:
   deploy_aws:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - name: Add private key
         run: |
+          echo "hi there"
           mkdir -p ~/.ssh
           echo "${{secrets.SSH_PRIVATE_KEY_NEW}}" 1> ~/.ssh/aws_key
           chmod 700 ~/.ssh/aws_key
@@ -29,5 +33,9 @@ jobs:
 
         
 
-
+# hi ther lets see if this shows up
+# hi ther lets see if this shows up
+# hi ther lets see if this shows up
+# hi ther lets see if this shows up
+# hi ther lets see if this shows up
 
